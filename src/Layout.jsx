@@ -10,7 +10,7 @@ export function Layout() {
     <BrowserRouter scrollBehavior="smooth">
       <NavBar />
       <Routes>
-        <Route path="/services*" element={<AllServices />} />
+        <Route path="/services/*" element={<AllServices />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/" element={<App />} />
         <Route path="/*" element={<App />} />

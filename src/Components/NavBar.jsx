@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false)
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 relative ">
       <div className="sm:fixed">
@@ -56,8 +58,9 @@ const NavBar = () => {
                   <button
                     id="dropdownDividerButton"
                     data-dropdown-toggle="dropdownDivider"
-                    className=" text-xl text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-medium px-3 py-2.5 text-center inline-flex items-center "
+                    className="relative text-xl text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-500 md:p-0 md:dark:hover:text-red-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 font-medium px-3 py-2.5 text-center inline-flex items-center "
                     type="button"
+                    onClick={() => setDropdownOpen((o) => !o)}
                   >
                     Servicios{' '}
                     <svg
@@ -79,7 +82,9 @@ const NavBar = () => {
 
                   <div
                     id="dropdownDivider"
-                    className="z-10 hidden bg-white divide-y  divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                    className={`absolute z-50 ${
+                      dropdownOpen ? '' : 'hidden'
+                    } bg-white divide-y  divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600`}
                   >
                     <ul
                       className="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -88,6 +93,7 @@ const NavBar = () => {
                       <li>
                         <Link
                           to="/services/outsourcing"
+                          onClick={() => setDropdownOpen(false)}
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Outsourcing
@@ -96,6 +102,7 @@ const NavBar = () => {
                       <li>
                         <Link
                           to="/services/marketing"
+                          onClick={() => setDropdownOpen(false)}
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Marketing
@@ -104,6 +111,7 @@ const NavBar = () => {
                       <li>
                         <Link
                           to={'/services/merchandising'}
+                          onClick={() => setDropdownOpen(false)}
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Merchandising
@@ -112,6 +120,7 @@ const NavBar = () => {
                       <li>
                         <Link
                           to={'/services/events'}
+                          onClick={() => setDropdownOpen(false)}
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           Events
@@ -121,6 +130,7 @@ const NavBar = () => {
                     <div className="py-2">
                       <Link
                         to={'/pricing'}
+                        onClick={() => setDropdownOpen(false)}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                       >
                         Pricing
