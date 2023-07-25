@@ -4,7 +4,7 @@
 
 .forms {
   width: 35px;
-  height: 160px;
+  height: 180px;
   flex-shrink: 0;
 }
 .blue-form-up {
@@ -31,14 +31,14 @@
 .up {
   display: flex;
   margin-left: 17rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   gap: 28rem;
 }
 
 .down {
   display: flex;
   margin-left: 32rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   gap: 28rem;
 }
 
