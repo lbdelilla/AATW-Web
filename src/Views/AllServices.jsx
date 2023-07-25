@@ -9,7 +9,6 @@ const AllServices = () => {
   const location = useLocation()
 
   useEffect(() => {
-    // Obtener el nombre del servicio desde la ruta, removiendo el '/services' inicial
     const selectedService = location.pathname.replace('/services/', '')
     const validServices = [
       'outsourcing',
