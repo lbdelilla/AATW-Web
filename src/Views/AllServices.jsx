@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import Merchandising from '../assets/merchandising.png'
 import Marketing from '../assets/marketing.png'
-import Events from '../assets/events.png'
+import Events from '../assets/Events.png'
 import Outsourcing from '../assets/outsourcing.png'
 import { useEffect } from 'react'
 
